@@ -2,5 +2,8 @@ git status
 git add .
 git commit -m "[訊息]"
 
+git remote add origin https://github.com/IOmeow/nthu_C-Programming-.git
+git push origin master
+
 後面太複雜之後再說。
 git branch
