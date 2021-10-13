@@ -14,4 +14,4 @@ int main(){
     return 0;
 }
 
-//gcc 10.5_var.c -o main.exe;./main.exe
+//gcc 10.5\10.5_var.c -o main.exe;./main.exe
