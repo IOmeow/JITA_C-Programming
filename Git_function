@@ -1,0 +1,6 @@
+git status
+git add .
+git commit -m "[訊息]"
+
+後面太複雜之後再說。
+git branch
