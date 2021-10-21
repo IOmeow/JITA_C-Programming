@@ -1,17 +1,17 @@
 #include <stdio.h>
+#include <math.h>
+#include <string.h>
 
 int main() {
-    int num,ans[15]={},i;
-    scanf("%d",&num);
-    if(num==0)printf("0");
-    for(i=0;num>0;i++){
-        ans[i]=num%2;
-        num/=2;
+    int ans=0;
+    char Bin[16];
+    scanf("%s",Bin);
+    for(int i=strlen(Bin);i>=0;i--){
+        if(Bin[i]=='1'){
+            ans+=pow(2,strlen(Bin)-i-1);
+        }
     }
-    for(i=i-1;i>=0;i--){
-        printf("%d",ans[i]);
-    }
-    printf("\n");
+    printf("%d\n",ans);
     
     return 0;
 }
