@@ -1,49 +1,25 @@
 #include <stdio.h>
 
 int main(){
-    char Game[10][10],temp;
+    char Game[10][10];
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             scanf(" %c",&Game[i][j]);
         }
     }
+    int xy[2][8]={{-1,-1,-1,0,0,1,1,1,},
+                  {-1,0,1,-1,1,-1,0,1}};
     for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
             if(Game[i][j]=='x'){
-                if(i>0){
-                    if(Game[i-1][j]=='_')Game[i-1][j]='1';
-                    else if(Game[i-1][j]!='x')Game[i-1][j]++;
-                    if(j>0){
-                        if(Game[i-1][j-1]=='_')Game[i-1][j-1]='1';
-                        else if(Game[i-1][j-1]!='x')Game[i-1][j-1]++;
-                    }
-                }
-                if(i<8){
-                    if(Game[i+1][j]=='_')Game[i+1][j]='1';
-                    else if(Game[i+1][j]!='x')Game[i+1][j]++;
-                    if(j<8){
-                        if(Game[i+1][j+1]=='_')Game[i+1][j+1]='1';
-                        else if(Game[i+1][j+1]!='x')Game[i+1][j+1]++;
-                    }
-                }
-                if(j>0){
-                    if(Game[i][j-1]=='_')Game[i][j-1]='1';
-                    else if(Game[i][j-1]!='x')Game[i][j-1]++;
-                    if(i<8){
-                        if(Game[i+1][j-1]=='_')Game[i+1][j-1]='1';
-                        else if(Game[i+1][j-1]!='x')Game[i+1][j-1]++;
-                    }
-                }
-                if(j<8){
-                    if(Game[i][j+1]=='_')Game[i][j+1]='1';
-                    else if(Game[i][j+1]!='x')Game[i][j+1]++;
-                    if(i>0){
-                        if(Game[i-1][j+1]=='_')Game[i-1][j+1]='1';
-                        else if(Game[i-1][j+1]!='x')Game[i-1][j+1]++;
+                for(int k=0;k<8;k++){
+                    int x=i+xy[0][k],y=j+xy[1][k];
+                    if(x>-1&&x<9&&y>-1&&y<9&&Game[x][y]!='x'){
+                        if(Game[x][y]=='_')Game[x][y]='1';
+                        else Game[x][y]++;
                     }
                 }
             }
-
         }
     }
     for(int i=0;i<9;i++){

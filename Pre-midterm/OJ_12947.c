@@ -6,8 +6,7 @@ int main(){
     scanf("%s %s",K,PT);
     for(int i=0;i<strlen(PT);i++){
         int a=K[i%strlen(K)]-'A';
-        if(PT[i]+a<='Z') CT[i]=PT[i]+a;
-        else CT[i]=PT[i]+a-'Z'+'A'-1;
+        CT[i]=(PT[i]-'A'+a)%26+'A';
     }
     printf("%s\n",CT);
     return 0;
