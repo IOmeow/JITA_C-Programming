@@ -13,15 +13,15 @@ int main(){
         int a=pow(10,i),b=pow(10,count-i-1);
         if(num/a%10!=num/b%10)pa=0;
     }
-    for(int i=num-1;i>1;i--){
+    for(int i=(int)sqrt(num)+1;i>1;i--){
         if(num%i==0)pr=0;
     }
-    if(pa==1){
-        if(pr==1)printf("%d is a palindromic prime number\n",num);
+    if(pa){
+        if(pr)printf("%d is a palindromic prime number\n",num);
         else printf("%d is a palindromic number\n",num);
     }
     else{
-        if(pr==1)printf("%d is a prime number\n",num);
+        if(pr)printf("%d is a prime number\n",num);
         else printf("%d is neither a palindromic number nor a prime number\n",num);
     }
     return 0;
