@@ -72,7 +72,8 @@ void UpdateBoardInDir(char self, char opnt, int r, int c, int r_step, int c_step
     // Check
     for (int i = r + r_step, j = c + c_step; i < row && i > -1 && j < col && j > -1; i = i + r_step, j = j + c_step){
         if (arr[i][j] == '_'){
-            continue;
+            // continue;
+            break;
         }
         else if (arr[i][j] == opnt){
             count_opnt++;
